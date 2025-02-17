@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT-like Interface</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <div class="syntax-savvy-icon">SYNTAX SAVVY</div>
+        </div>
+        <div class="new-chat-btn" onclick="createNewChat()">+ New Chat</div>
+        <div class="chat-list" id="chatList"></div>
+    </div>
+
+    <!-- Main Chat Interface -->
+    <div class="chat-container" id="chatContainer"></div>
+
+    <!-- Input Container -->
+    <div class="input-container">
+        <div class="input-wrapper">
+            <input type="text" id="userInput" placeholder="Send a message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <!-- Rename Modal -->
+    <div class="modal" id="renameModal">
+        <div class="modal-content">
+            <h3>Rename Chat</h3>
+            <input type="text" id="renameInput" placeholder="Enter new chat name">
+            <div class="modal-actions">
+                <button onclick="closeRenameModal()">Cancel</button>
+                <button onclick="saveChatName()">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Modal -->
+    <div class="modal" id="deleteModal">
+        <div class="modal-content">
+            <div class="delete-modal-header">
+                <h3>⚠️ Delete Chat</h3>
+            </div>
+            <p>Are you sure you want to delete this chat? This action cannot be undone.</p>
+            <div class="modal-actions">
+                <button onclick="closeDeleteModal()">Cancel</button>
+                <button class="delete-confirm-btn" onclick="confirmDelete()">Delete Forever</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
